@@ -1,0 +1,71 @@
+<br><br><div>
+ 
+  <a  routerLink="/rechP" class="btn btn-outline-dark  pull-right" >Recherche par prenom </a> 
+  <a  routerLink="/rechA" class="btn btn-outline-dark  pull-right" >Recherche par adresse</a>
+  <a  routerLink="/searchContact" class="btn btn-outline-dark  pull-right" >Recherche par Nom</a>
+  <a  routerLink="/rechType" class="btn btn-outline-dark  pull-right" >Filtrer Par Categorie</a>
+</div>
+
+  <br><br>  <br>
+
+<div class="container" align ="center">
+
+  <input  (keyup)="recherche()"  [(ngModel)] ="searche" placeholder=" saisie cle de recherche " size ="20px" type="text"  class="form-control">
+
+
+  <br><br>
+
+    <div class="container" style="margin-top: 20px;">
+    <table  *ngIf="liste "   class="table table-hover"border=4 >
+      <tr>
+        
+        <th>
+          Id
+        </th>
+        <th>
+          Nom
+        </th>
+        <th>
+            Prenom
+          </th>
+        <th>
+          Email
+        </th>
+        <th>
+          Adresse
+        </th>
+        <th>
+            Numero de telephone
+          </th>
+        <th>
+         Action
+        </th>
+      </tr>
+      <tr *ngFor ="let elt of listess" >
+        <td>
+          &nbsp;&nbsp;{{elt.id}}
+        </td>
+        <td>
+          {{elt.nom}} 
+        </td>
+        <td>
+            {{elt.prenom}} 
+          </td>
+          <td>
+            {{elt.email}} 
+          </td>
+          <td>
+            {{elt.adresse}} 
+          </td>
+          <td>
+          {{elt.tel}}
+        </td>
+        <td>
+
+        <button  class="btn btn-outline-danger " (click)=supprimer(elt.id)><i class="fa fa-trash" ></i></button>&nbsp;&nbsp;&nbsp;
+        <a routerLink ="/update/{{elt.id}}"   class="btn btn-outline-info"> <i class="fa fa-edit"> </i></a>&nbsp;&nbsp;&nbsp;
+        <a  routerLink ="/detail/{{elt.id}}"   class="btn  btn-outline-success"><i class="fa fa-eye"> </i> </a>    </td>
+      </tr>
+    </table>
+    </div>
+   

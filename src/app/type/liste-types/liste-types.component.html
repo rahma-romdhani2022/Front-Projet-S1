@@ -1,0 +1,111 @@
+<!--<br><br><div class="form-group">
+    <div class="container" style="margin-top: 20px;">
+      
+    <table  *ngIf="liste ;else vide"   class="table table-hover"border=4 >
+      <tr>
+        
+        <th>
+          Id
+        </th>
+        <th>
+          Nom
+        </th>
+       
+        <th>
+         Actions
+        </th>
+      </tr>
+      <tr *ngFor ="let elt of liste" >
+        <td>
+          &nbsp;&nbsp;{{elt.id}}
+        </td>
+        <td>
+          {{elt.nom}} 
+        </td>
+       
+        <td>
+     
+        <button class="fa fa-trash btn btn-outline-danger " (click)=supprimer(elt.id)></button>&nbsp;&nbsp;&nbsp;
+        <a  routerLink ="/updateType/{{elt.id}}" onclick="modifier()"  class="btn btn-info">
+          Edit
+      </a>
+      <a  routerLink ="/detailType/{{elt.id}}" onclick="show()"  class="btn btn-success">Liste Des Contacts </a> 
+        </td>
+      </tr>
+    </table>
+    <ng-template #vide ><h1 style="color: red;"><u>Tableau Vide</u> </h1></ng-template>
+    <br><br>-->
+    
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <title>Table V01</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->	
+      <link rel="icon" type="image/png" href="./assets/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+  	  <!--<link rel="stylesheet" type="text/css" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    ===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="./assets/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="./assets/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="./assets/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+      <link rel="stylesheet" type="text/css" href="./assets/css/util.css">
+    <!--===============================================================================================-->
+    </head>
+    <body>
+      
+      <div class="limiter">
+        <div class="container-table100">
+          <div class="wrap-table100">
+            <div class="table100">
+              <table >
+                <thead>
+                  <tr  class="table100-head">
+                    <th  class="column1">ID</th>
+                    <th class="column1">Nom de Categorie</th>
+                    <th class="column1"> Nom utilisateur </th>
+                    <th class="column1"> Actions </th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor ="let elt of liste" >
+                    <td  class="column1"> <h5>{{elt.id}} </h5> </td>
+                    <td  class="column1"><h5>{{elt.nom}}</h5> </td>
+                    <td class="column1"><h5>{{elt.nom}}</h5>
+                    <td><button class="btn btn-outline-danger "(click)=supprimer(elt.id)><i class="fa fa-trash" ></i></button>&nbsp;&nbsp;
+                       <a  routerLink ="/updateType/{{elt.id}}" onclick="modifier()"  class="btn btn-outline-info"> <i class="fa fa-edit"> </i></a>&nbsp;&nbsp;
+                       <a  routerLink ="/detailType/{{elt.id}}" onclick="show()"  class="btn btn-outline-success"><i class="fa fa-eye"> Liste Des Contacts</i>  </a>   </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      
+    
+    <!--===============================================================================================-->	
+      <script src="./assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+      <script src="./assets/vendor/bootstrap/js/popper.js"></script>
+      <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+      <script src="./assets/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+      <script src="./assets/js/main.js"></script>
+    
+    </body>
+    </html>
+    

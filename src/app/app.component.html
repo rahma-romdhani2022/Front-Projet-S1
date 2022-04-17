@@ -1,0 +1,24 @@
+<div >
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container">
+  <a class="navbar-brand" routerLink=""   ><i>Gestion des Contacts</i></a>
+
+
+  <ul class="navbar-nav">
+    <li  class="nav-item"><a class="nav-link"   routerLink="/ListeContacts"><i>Mes Contacts</i></a></li> 
+    <li  class="nav-item">  <a class="nav-link"  routerLink="/listTypes"><i>Categories</i></a></li>      
+    <li  class="nav-item" ><a  class="nav-link"  routerLink="/searchContact"><i>recherche un  Contact</i> </a>
+    <li class="nav-item" >  <a class="nav-link"  routerLink="/Ajouter Contact"><i>Ajouter un nouveu Contact</i></a></li> 
+    <li class="nav-item" >  <a class="nav-link"  routerLink="/addType"><i>Add type</i></a></li> 
+   
+    <li   class="nav-item">  <a  class="nav-link"  routerLink="/login"><i>Connexion</i></a></li> 
+    <li   class="nav-item">  <a  class="nav-link"  routerLink="/registre"><i>Authentification</i></a></li> 
+   
+    </ul>
+  </div>
+ </nav> 
+</div>
+<router-outlet></router-outlet>
+<!-- *ngIf="service.isUserLoggedIn()"
+   <li  class="nav-item">  <a class="nav-link" routerLink="/logout"><i>Deconnexion</i></a></li> 
+-->

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V4</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/vendorFormLogin/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--============================================./assets/===================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/vendorFormLogin/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="./assets/vendorFormLogin/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/vendorFormLogin/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/vendorFormLogin/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="./assets/vendorFormLogin/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/cssformLogin/util.css">
+	<link rel="stylesheet" type="text/css" href="./assets/cssformLogin/main.css">
+                                   
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('./assets/images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form" form (ngSubmit)="login(fl)" #fl=ngForm >
+          <div class="alert alert-danger" *ngIf="msg"> 
+            <a href="/login" class="close" data-dismiss="alert">&times;</a> 
+            <strong>&nbsp;&nbsp;Error Message! &nbsp;</strong> 
+            {{msg}} </div> 
+					<span class="login100-form-title p-b-49">
+					 <h1><b>Connexion</b></h1>	
+					</span>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<span class="label-input100"><b>Adresse Email</b></span>
+					
+						<i class="fa fa-user"></i><input class="input100 "  type="email" name="nom" placeholder="Enter email"
+            ngModel name="email"  required #email="ngModel" [class.is-invalid]="email.invalid  && email.touched" required pattern="^\w+@[a-zA-Z]+?\.[a-zA-Z]{2,3}$">
+						<span style=color:red *ngIf="!email.valid && email.touched">Entrez un  email valide </span>
+            <span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100"><b> Mot de passe</b></span>
+						<input class="input100" type="password" name="password" placeholder="ecrire votre mot de passe"
+            ngModel name="password"  required #password="ngModel">
+            <span style=color:red *ngIf="!password.valid && password.touched">Entrez un  mot de passe  valide </span>
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					<br>
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" [disabled]=!fl.valid>
+								Login
+							</button></div>
+            
+					</div>
+
+          
+
+					<div class="flex-col-c p-t-155">
+						<a routerLink="/registre" class="txt2">
+							Registre un nouveau utilisateur 
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="./assets/vendorFormLogin/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./assets/vendorFormLogin/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./assets/vendorFormLogin/bootstrap/js/popper.js"></script>
+	<script src="./assets/vendorFormLogin/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./assets/vendorFormLogin/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./assets/vendorFormLogin/daterangepicker/moment.min.js"></script>
+	<script src="./assets/vendorFormLogin/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="./assets/vendorFormLogin/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="./assets/jsFormLogin/main.js"></script>
+
+</body>
+</html>

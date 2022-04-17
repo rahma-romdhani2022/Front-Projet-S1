@@ -1,0 +1,107 @@
+<!--
+<div class="container">
+  <form (ngSubmit)="registre(fr)" #fr=ngForm >
+     <small class="text-danger">{{msg}}</small>
+     <div class="form-group">
+      <label for="exampleInputEmail1">Nom </label>
+      <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter nom"
+      ngModel name="username"  required #username="ngModel" [class.is-invalid]="username.invalid  && username.touched" >
+      <span style=color:red *ngIf="!username.valid && username.touched">Entrez un  username valid </span>
+    </div>
+
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+        ngModel name="email"  required #email="ngModel" [class.is-invalid]="email.invalid  && email.touched" required pattern="^\w+@[a-zA-Z]+?\.[a-zA-Z]{2,3}$">
+        <span style=color:red *ngIf="!email.valid && email.touched">Entrez un  email valid </span>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter your Password"
+      ngModel name="password"  required #password="ngModel" >
+        <span style=color:red *ngIf="!password.valid && password.touched">Entrez un  password valid </span>
+      </div>
+      
+      <button type="submit" [disabled]=!fr.valid class="btn btn-success">Submit</button>
+    </form>-->
+<!--<div class="container">
+  <form (ngSubmit)="registre(fr)" #fr=ngForm >
+     <small class="text-danger">{{msg}}</small>
+     <div class="form-group">
+      <label for="exampleInputEmail1">Nom </label>
+      <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter nom"
+      ngModel name="username"  required #username="ngModel" [class.is-invalid]="username.invalid  && username.touched" >
+      <span style=color:red *ngIf="!username.valid && username.touched">Entrez un  username valid </span>
+    </div>
+
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+        ngModel name="email"  required #email="ngModel" [class.is-invalid]="email.invalid  && email.touched" required pattern="^\w+@[a-zA-Z]+?\.[a-zA-Z]{2,3}$">
+        <span style=color:red *ngIf="!email.valid && email.touched">Entrez un  email valid </span>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter your Password"
+      name="password" [(ngModel)]="user.password"  required #password="ngModel" >
+        <span style=color:red *ngIf="!password.valid && password.touched">Entrez un  password valid </span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">confirm Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+         name="cpassword"   appConfirmEqualValidator="password"required #cpassword="ngModel"  [(ngModel)]="user.cpassword"  >
+        <span style=color:red *ngIf="!cpassword.valid && cpassword.touched && cpassword.errors?.notEqual">confirm  password valid </span>
+      </div>
+      <button type="submit" [disabled]=!fr.valid class="btn btn-success">Submit</button>
+    </form>-->
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The Easiest Way to Add Input Masks to Your Forms</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+       
+    </head>
+    <body>
+        <div class="registration-form">
+            <form (ngSubmit)="registre(fr)" #fr=ngForm >
+              <div class="alert alert-danger" *ngIf="msg"> 
+                <a href="/registre" class="close" data-dismiss="alert">&times;</a> 
+                <strong>&nbsp;&nbsp;Error Message! &nbsp;</strong>
+                {{msg}} </div> 
+                <div class="form-icon">
+                    <span><i class="icon icon-user"></i></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control item" id="username" placeholder="Username"
+                    ngModel name="username"  required #username="ngModel" [class.is-invalid]="username.invalid  && username.touched" >
+                    <span style=color:red *ngIf="!username.valid && username.touched">Entrez un  username valid </span>
+                 </div>
+                <div class="form-group">
+                  <input type="email" class="form-control item" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+                  ngModel name="email"  required #email="ngModel" [class.is-invalid]="email.invalid  && email.touched" required pattern="^\w+@[a-zA-Z]+?\.[a-zA-Z]{2,3}$">
+                  <span style=color:red *ngIf="!email.valid && email.touched">Entrez un  email valid </span>
+               </div>
+               <div class="form-group">
+                <input type="password" class="form-control item" id="exampleInputPassword1" placeholder="Password"
+                ngModel name="password"  required #password="ngModel">
+                <span style=color:red *ngIf="!password.valid && password.touched">Entrez un  password valid </span>
+              </div>
+          
+               
+                <div class="form-group" align="center">
+                    <button type="submit" class="btn btn-block create-account" >Registre</button>
+              <p class="float-right" (click)=" route()">&nbsp;&nbsp;&nbsp;&nbsp;<b><u>J'ai déja un compte  </u></b></p> </div>
+              </form>
+          
+        </div>
+    
+    </body>
+    </html>

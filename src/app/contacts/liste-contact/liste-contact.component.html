@@ -1,0 +1,80 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="./assets/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<!--	<link rel="stylesheet" type="text/css" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/util.css">
+<!--===============================================================================================-->
+</head>
+<body><div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+	
+				<div class="table100">
+					<table >
+						<thead>
+              <tr  class="table100-head">
+                <th>&nbsp;&nbsp; Nom &nbsp;</th>
+                <th class="column1"> Prenom </th>
+                <!--<th> &nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp; </th>--> 
+                <th class="column2"> Adresse </th>
+                <th class="column3"> Nume télephone</th>
+                <th class="column4"> categorie </th>
+                <th class="column5"> Nom utilisateur </th>
+                <th class="column6"> Actions </th>
+         
+              </tr>
+						</thead>
+						<tbody>
+              <tr *ngFor ="let elt of liste" >
+                <td class="column1"><h5>{{elt.nom}}</h5> </td>
+                <td class="column1"><h5>{{elt.prenom}}  </h5> </td>
+              <!-- <td> {{elt.email}} </td>--> 
+                <td class="column1"><h5>{{elt.adresse}}</h5>  </td>
+                <td class="column1"> <h5>{{elt.tel}}</h5></td>
+                <td class="column1"> <h5>{{elt.type.nom}}</h5></td>
+                 <!--  <td  class="column1"><h5> {{elt.user.username}}</h5></td>  -->
+                <td class="column1"> 
+                <button  class="btn btn-outline-danger " (click)=supprimer(elt.id)><i class="fa fa-trash" ></i></button>&nbsp;&nbsp;&nbsp;
+                <a routerLink ="/update/{{elt.id}}"   class="btn btn-outline-info"> <i class="fa fa-edit"> </i></a>&nbsp;&nbsp;&nbsp;
+                <a  routerLink ="/detail/{{elt.id}}"   class="btn  btn-outline-success"><i class="fa fa-eye"> </i> </a>    </td>
+              </tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+<!--===============================================================================================-->	
+	<script src="./assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./assets/vendor/bootstrap/js/popper.js"></script>
+	<script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./assets/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./assets/js/main.js"></script>
+
+</body>
+</html>

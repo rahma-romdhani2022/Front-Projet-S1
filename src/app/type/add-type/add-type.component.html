@@ -1,0 +1,35 @@
+<div class="container" style="margin-top: 20px;">
+    <form (ngSubmit)="addType(ft)" #ft=ngForm >
+        <div class="alert alert-danger" *ngIf="msg"> 
+            <a href="/addType" class="close" data-dismiss="alert">&times;</a> 
+            <strong>&nbsp;&nbsp;Error Message! &nbsp;</strong>
+            {{msg}} </div> 
+      <div class="form-group">
+        <label for="nom">Nom </label>
+        <input type="text" class="form-control"  placeholder="Enter nom " 
+        ngModel name="nom"  required #nom="ngModel">
+        <span style=color:red *ngIf="!nom.valid && nom.touched">Entrez le nom  </span>
+      </div><br>
+      <button type="submit" [disabled]=!ft.valid class="btn btn-success">Submit</button>
+  
+    </form>
+  </div>
+  <!--<div class="container">
+    <p></p>
+    <div class="row">
+    <div class="col-4">
+    <div class="card">
+      <div class="card-body">
+          <form #f="ngForm" (ngSubmit)="saveProduct(f.value)">
+          <div class="form-group">
+              
+              Nom  :  <input ngModel placeholder="Designation" type="text" name="nom" id="designation" class="form-control">
+              </div>
+            <button class="btn btn-sm btn-primary">Ajouter</button>
+          </form>
+        </div>
+    </div>
+    </div>
+    </div>
+  </div>-->
+  
